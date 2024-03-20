@@ -1,12 +1,15 @@
 import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
 import ContactForm from "../ContactForm/ContactForm";
-import { selectLoading, selectError } from "../../redux/selector";
+import Loader from "../Loader/Loader";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
-import "./App.css";
+import { selectLoading, selectError } from "../../redux/selector";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";
+
+import "./App.css";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -22,8 +25,8 @@ export default function App() {
       <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox />
-      {error && <p> ERROR </p>}
-      {loading && <p> LOADING..</p>}
+      {error && <ErrorMessage />}
+      {loading && <Loader />}
       <ContactList />
     </div>
   );
