@@ -13,9 +13,3 @@ export default function ContactList() {
     </div>
   );
 }
-
-// const filter = useSelector(selectNameFilter);
-
-// const filteredContacts = contacts.filter((contact) =>
-//   contact.name.toLowerCase().includes(filter.toLowerCase())
-// );
