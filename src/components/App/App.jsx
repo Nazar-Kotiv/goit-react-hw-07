@@ -4,7 +4,7 @@ import ContactForm from "../ContactForm/ContactForm";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
-import { selectLoading, selectError } from "../../redux/selector";
+import { selectLoading, selectError } from "../../redux/contactsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";

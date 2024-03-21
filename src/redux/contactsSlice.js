@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchContacts, deleteContact, addContact } from "./contactsOps";
 import { createSelector } from "@reduxjs/toolkit";
-import { selectContacts, selectFilter } from "./selector";
+import { selectFilter } from "./filtersSlice";
 
 const contactsSlice = createSlice({
   name: "contacts",
@@ -52,6 +52,12 @@ const contactsSlice = createSlice({
         state.error = true;
       }),
 });
+
+export const selectLoading = (state) => state.contacts.loading;
+
+export const selectError = (state) => state.contacts.error;
+
+export const selectContacts = (state) => state.contacts.items;
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
